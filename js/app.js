@@ -36,6 +36,10 @@ const loadData = (data) => {
     <h2> ${data.num_found} Results Found</h2>
     `
     result.appendChild(resultDiv);
+    // ------ condition of book that dose't exist ----- 
+    if(`data.num_found === 0`){
+        spiner('none');
+    }
 
     // ------ set book list ------ 
     const allData = data.docs;
