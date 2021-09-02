@@ -21,7 +21,7 @@ const searchBtn = () => {
     const searchText = search.value;
     search.value = '';
 
-    fetch(`http://openlibrary.org/search.json?q=${searchText}`)
+    fetch(`https://openlibrary.org/search.json?q=${searchText}`)
         .then(res => res.json())
         .then(data => loadData(data))
 }
@@ -57,6 +57,6 @@ const loadData = (data) => {
         </div>
         `
         books.appendChild(div);
-        spiner('none')
+        spiner('none');
     })
 }
