@@ -1,9 +1,21 @@
-function spiner(control) {
+// ----spiner function ---- 
+const spiner= (control)=>{
     const spiner= document.getElementById('spiner');
     spiner.style.display = control;
 }
+
+// ----- all clear fuction ------ 
+const allClear = ()=>{
+    const result = document.getElementById('result-found');
+    result.textContent = '';
+    const books = document.getElementById('books');
+    books.textContent = '';
+}
 spiner('none');
+
+// ----- main part search btn ----- 
 const searchBtn = () => {
+    allClear();
     spiner('block');
     const search = document.getElementById('search-text');
     const searchText = search.value;
@@ -15,6 +27,8 @@ const searchBtn = () => {
 }
 
 const loadData = (data) => {
+
+    // ------ set result found -----
     const result = document.getElementById('result-found');
     result.textContent = '';
     const resultDiv = document.createElement('div');
@@ -23,6 +37,7 @@ const loadData = (data) => {
     `
     result.appendChild(resultDiv);
 
+    // ------ set book list ------ 
     const allData = data.docs;
     const books = document.getElementById('books');
     books.textContent = '';
@@ -40,7 +55,6 @@ const loadData = (data) => {
             <h6><span>First Publish:</span> ${data.first_publish_year}</h6>
         </div>
         </div>
-
         `
         books.appendChild(div);
         spiner('none')
