@@ -12,10 +12,9 @@
         h2 {
             text-align: center;
             color: red;
-            font-size: large;
+            font-size: x-large;
             margin-top: 20px;
         }
-
         span {
             color: darkgray;
         }
@@ -28,9 +27,13 @@
             aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="searchBtn()" class="btn btn-dark btn-outline-info" type="button">Search</button>
     </div>
-    <section id="result-found"></section>
-    
+    <section id="result-found">
+    </section>
 
+    <button id="spiner" class="btn" type="button">
+        <span class="spinner-grow spinner-grow-sm text-info" role="status"></span><span class="text-info"><span class="text-info">Loading...</span>
+        
+    </button>
     <!-- new -->
     <div id="books" class="row row-cols-1 row-cols-md-3 g-4 m-5">
     </div>

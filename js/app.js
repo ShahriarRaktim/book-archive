@@ -1,4 +1,10 @@
+function spiner(control) {
+    const spiner= document.getElementById('spiner');
+    spiner.style.display = control;
+}
+spiner('none');
 const searchBtn = () => {
+    spiner('block');
     const search = document.getElementById('search-text');
     const searchText = search.value;
     search.value = '';
@@ -28,7 +34,7 @@ const loadData = (data) => {
         <div class="card h-100">
         <img class="w-75 mx-auto" src="https://covers.openlibrary.org/b/id/${data.cover_i}-M.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">${data.title}</h5>
+            <h3 class="card-title">${data.title}</h3>
             <h6><span>Author:</span> ${data?.author_name?.toString()}</h6>
             <h6><span>Publisher:</span> ${data?.publisher?.toString()}</h6>
             <h6><span>First Publish:</span> ${data.first_publish_year}</h6>
@@ -37,5 +43,6 @@ const loadData = (data) => {
 
         `
         books.appendChild(div);
+        spiner('none')
     })
 }
